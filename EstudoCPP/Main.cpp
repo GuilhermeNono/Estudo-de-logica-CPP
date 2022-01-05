@@ -3,6 +3,7 @@
 #include <cmath>
 #define _USE_MATH_DEFINES
 #include <math.h>
+#include <locale.h>
 
 void ReturnHelloWorld() {
 	std::cout << "Ola, mundo!\n";
@@ -91,8 +92,52 @@ void SquareArea() {
 	std::cout << "O valor da area do quadrado eh de " << area << "cm2\n";
 }
 
-int main(int argc, char** argv) {
+void CalcWork() {
+	float salarioPorHora;
+	float horasTrabalhadasNoMes;
+	float salarioFinal;
+	std::cout << "Informe o quanto você ganha por hora: ";
+	std::cin >> salarioPorHora;
+	std::cout << "\n";
 
+	std::cout << "Informe quantas horas você trabalhou durante esse mês: ";
+	std::cin >> horasTrabalhadasNoMes;
+	std::cout << "\n";
+
+	salarioFinal = salarioPorHora * horasTrabalhadasNoMes;
+
+	std::cout << "Seu salario final é de R$" << salarioFinal << "\n";
+}
+
+void FarenheitToCelsius() {
+	//C = (5 * (F-32) / 9)
+	float farenheit;
+	float celsius;
+	std::cout << "Informe a temperatura em graus Farenheit: ";
+	std::cin >> farenheit;
+	std::cout << "\n";
+
+	celsius = (5 * (farenheit - 32) / 9);
+
+	std::cout << farenheit << "°F é igual a " << celsius << "°C \n";
+
+}
+
+void CelsiusToFarenheit() {
+	//F = (C * 9/5) + 32
+	float celsius;
+	float farenheit;
+	std::cout << "Informe a temperatura em graus Celsius: ";
+	std::cin >> celsius;
+	std::cout << "\n";
+
+	farenheit = (celsius * 9/5) + 32;
+
+	std::cout << celsius << "°C é igual a " << farenheit << "°F \n";
+}
+
+int main(int argc, char** argv) {
+	setlocale(LC_ALL, "Portuguese");
 	//Exercicio 1 -> Faça um Programa que mostre a mensagem "Olá Mundo" na tela.
 	// 
 	////ReturnHelloWorld();
@@ -123,8 +168,16 @@ int main(int argc, char** argv) {
 	//
 	//Exercicio 8 -> Faça um Programa que pergunte quanto você ganha por hora e o número de horas trabalhadas no mês. Calcule e mostre o total do seu salário no referido mês.
 	//
-
-
+	////CalcWork();
+	//
+	//Exercicio 9 -> Faça um Programa que peça a temperatura em graus Farenheit, transforme e mostre a temperatura em graus Celsius. C = (5 * (F-32) / 9).
+	//
+	////FarenheitToCelsius();
+	//
+	//Exercicio 10 -> Faça um Programa que peça a temperatura em graus Celsius, transforme e mostre em graus Farenheit.
+	//
+	////CelsiusToFarenheit();
+	//
 
 	system("pause");
 
